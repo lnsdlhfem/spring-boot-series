@@ -24,7 +24,7 @@ public class MorphiaAutoConfiguration {
         // map entities, there is maybe a better way to find and map all entities
         ClassPathScanningCandidateComponentProvider entityScanner = new ClassPathScanningCandidateComponentProvider(true);
         entityScanner.addIncludeFilter(new AnnotationTypeFilter(Entity.class));
-        for (BeanDefinition candidate : entityScanner.findCandidateComponents("com.lnsdlhfem")) { // from properties?
+        for (BeanDefinition candidate : entityScanner.findCandidateComponents("com.lnsdlhfem.mongodb.entity")) { // from properties?
             morphia.map(Class.forName(candidate.getBeanClassName()));
         }
 
